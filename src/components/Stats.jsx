@@ -1,6 +1,7 @@
 import React from "react";
 
 function Stats({ items }) {
+  console.log(items)
   if (!items.length)
     return (
       <p className="stats">
@@ -9,7 +10,7 @@ function Stats({ items }) {
     );
   const numItem = items.length;
   const numPackedItem = items.filter((item) => item.packed).length;
-  const packedPercent = Math.round((numPackedItem / numItem) * 100);
+  const packedPercent = Math.round((numPackedItem / numItem) * 100); // this is the concept Based on Derived State -- Derived State means do not make separate state which can be calculated with existing State 
   return (
     <footer className="stats">
       <em>
